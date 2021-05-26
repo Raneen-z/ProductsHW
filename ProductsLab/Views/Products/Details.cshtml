@@ -1,0 +1,27 @@
+﻿@page
+@model ProductsLab.Views.Products.DetailsModel
+@{
+    ProductModel product = (ProductModel)ViewBag.Product;
+    Layout = "_Layout2";
+}
+
+
+    @if (product != null)
+    {
+
+
+        <div class="card text-center" style="width: 35rem;">
+            <img class="card-img-top" src=@product.Image width="300" height="400" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@product.Name </h5>
+                <p class="card-text">Price: @product.Price</p>
+                <a href="#" class="btn btn-primary">Buy</a>
+            </div>
+        </div>
+
+
+    }
+    else
+    {
+        <h1> Sorry, Not Found </h1>
+    }

@@ -1,0 +1,63 @@
+﻿@page
+@model ProductsLab.Views.Products.IndexModel
+@{
+    List<ProductModel> products = (List<ProductModel>)ViewBag.ProductList;
+}
+@if (ViewBag.Color == null)
+{
+    <table class="table">
+
+        <thead>
+            <tr class="bg-dark text-white text-center border-info">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr class="text-center">
+                    <th scope="row" class="align-middle">
+                        @*<a asp-area="" asp-controller="Products" asp-action="Details" ID="@product.Id">@product.Id</a>*@
+                        <a href="/Products/details/@product.Id" class="p-1 mb-1 bg-dark text-white">View Details </a>
+                    </th>
+                    <td class="align-middle">@product.Name</td>
+                    <td class="align-middle">@product.Price</td>
+                    <td class="align-middle"><img src=@product.Image width="170" height="200" /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+else
+{
+
+    <table class="table" style="background-color:@ViewBag.Color;">
+
+        <thead>
+            <tr class="bg-dark text-white text-center border-info">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr class="text-center">
+                    <th scope="row" class="align-middle">
+                        <a href="/Products/details/@product.Id" class="p-1 mb-1 bg-dark text-white">View Details </a>
+                    </th>
+                    <td class="align-middle">@product.Name</td>
+                    <td class="align-middle">@product.Price</td>
+                    <td class="align-middle"><img src=@product.Image width="170" height="200" /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
