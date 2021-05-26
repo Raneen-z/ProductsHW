@@ -1,7 +1,7 @@
 # ProductsHW
 
 ### Screenshot
-<img src='screenshot.png' width='300'/>
+<img src='screenshot.png' width='800'/>
 
 #### المتدربة: رنين الزعفراني
 #### المشرفة: لمياء القحطاني
